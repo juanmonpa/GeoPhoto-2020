@@ -1,0 +1,48 @@
+<ion-refresher slot="fixed" (ionRefresh)="refreshEntries($event)">
+  <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles"
+    refreshingText="Actualizando...">
+  </ion-refresher-content>
+</ion-refresher>
+<ion-list class="topP">
+  <ion-item>
+    <ion-label>{{ this.auth.user.email }}</ion-label>
+    <ion-button (click)="this.cerrarSesion()">Cerrar Sessión</ion-button>
+  </ion-item>
+</ion-list>
+<ion-virtual-scroll [items]="this.myEntries">
+  <!-- Sliding item with text options on both sides -->
+  <ion-item-sliding *virtualItem="let item">
+    <ion-item-options side="start">
+      <ion-item-option (click)="editModal(item)">
+        <ion-icon slot="start" name="create"></ion-icon>
+        Editar
+      </ion-item-option>
+    </ion-item-options>
+
+    <ion-item>
+      <ion-label>
+        <h2>{{ item.title }}</h2>
+        <p>{{ item.description }}</p>
+      </ion-label>
+      <ion-note slot="end">
+        <span *ngIf="item.date">{{
+          item.date.toLocaleString() | date: "dd/MM/y H:mm"
+        }}</span>
+        <ion-avatar style="margin-left:10px" (click)="this.viewImage(item)">
+          <img [src]="item.url" />
+        </ion-avatar>
+      </ion-note>
+    </ion-item>
+
+    <ion-item-options side="end">
+      <ion-item-option color="danger" (click)="removeEntry(item)">
+        <ion-icon slot="top" name="archive"></ion-icon>
+        Eliminar
+      </ion-item-option>
+    </ion-item-options>
+  </ion-item-sliding>
+</ion-virtual-scroll>
+<ion-infinite-scroll #infiniteScroll threshold="100px" (ionInfinite)="loadMoreEntries($event)">
+  <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Cargando imágenes...">
+  </ion-infinite-scroll-content>
+</ion-infinite-scroll>

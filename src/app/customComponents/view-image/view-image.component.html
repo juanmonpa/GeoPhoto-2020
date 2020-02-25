@@ -1,0 +1,7 @@
+<div class="container">
+  <div class="vertical-center">
+    <div class="info1">{{this.entry.title}} | {{this.entry.date | date :  "dd/MM/y H:mm"}}</div>
+    <img [src]="this.entry.url" alt="loading image...">
+    <div class="info">{{this.entry.description}}<br>By {{this.entry.owner}}</div>
+  </div>
+</div>

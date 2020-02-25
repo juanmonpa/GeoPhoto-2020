@@ -1,0 +1,33 @@
+<ion-content  color="primary">
+  <form [formGroup]="registroForm" (ngSubmit)="onSubmit()">
+    <ion-grid>
+      <ion-row color="primary" justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          <div text-center>
+            <h3>Introduzca sus datos de registro</h3>
+          </div>
+          <div padding>
+            <ion-item>
+              <ion-label>Correo Electrónico: </ion-label>
+              <ion-input type="email" id="inputEmail" placeholder="Introduzca el correo electrónico" class="form-control" formControlName="email" required autofocus></ion-input>
+              </ion-item>
+              <p class="alert alert-danger" *ngIf="erroresForm.email">
+                  {{ erroresForm.email }}
+              </p>
+              <ion-item>
+              <ion-label>Contraseña: </ion-label>
+              <ion-input type="password" placeholder="Introduce la contraseña" id="inputPassword" class="form-control" formControlName="password" required></ion-input>
+              
+            </ion-item>
+            <p class="alert alert-danger" *ngIf="erroresForm.password">
+              {{ erroresForm.password }}
+          </p>
+          </div>
+          <div padding>
+            <ion-button  size="large" type="submit" [disabled]="!registroForm.valid" expand="block">Registrar</ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

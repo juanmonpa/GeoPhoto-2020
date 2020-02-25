@@ -1,5 +1,8 @@
 {
-  "name": "myApp",
-  "integrations": {},
+  "name": "Geophoto",
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
   "type": "angular"
 }

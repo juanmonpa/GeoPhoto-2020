@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title>Datos de la Imagen</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-progress-bar color="secondary" [value]="(this.cloud.uploadPercent | async) / 100"></ion-progress-bar>
+  <form [formGroup]="entryForm" (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-label position="floating">Subido por:</ion-label>
+      <ion-input placeholder="Owner" [value]="this.entry.owner" readonly formControlName="owner"></ion-input>
+      <ion-note slot="end">
+        <ion-avatar style="margin-left:10px">
+          <img [src]="this.pic" />
+        </ion-avatar>
+      </ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Titulo</ion-label>
+      <ion-input placeholder="Titulo de la imagen" [value]="this.entry.title" formControlName="title"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Descripción</ion-label>
+      <ion-input placeholder="Descripcion de la imagen" [value]="this.entry.description" formControlName="description"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>DD/MM/YYYY H:mm</ion-label>
+      <ion-datetime displayFormat="DD/MM/YYYY H:mm" formControlName="date"></ion-datetime>
+    </ion-item>
+    <ion-button type="submit" expand="full" color="primary" [disabled]="!entryForm.valid">Save</ion-button>
+  </form>
+  <ion-button type="button" expand="full" color="danger" (click)="this.closeMe()">Cancel</ion-button>
+
+  <ion-progress-bar type="indeterminate" *ngIf="submitting"></ion-progress-bar>
+</ion-content>

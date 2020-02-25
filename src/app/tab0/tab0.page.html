@@ -1,0 +1,11 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Bienvenid@
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <app-login *ngIf="!this.auth.user"></app-login>
+   <app-list-images *ngIf="this.auth.user"></app-list-images> 
+</ion-content>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1059223010911",
+    "firebase_url": "https://geophoto-2020.firebaseio.com",
+    "project_id": "geophoto-2020",
+    "storage_bucket": "geophoto-2020.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1059223010911:android:04ced187b82b16e038a5ea",
+        "android_client_info": {
+          "package_name": "com.geophoto.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1059223010911-3h3836sev34t05rv2l4ioum6fcj6n1of.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.geophoto.app",
+            "certificate_hash": "da16a33fabaebd6a7664211d854fe4ca94ed6e4a"
+          }
+        },
+        {
+          "client_id": "1059223010911-3h3836sev34t05rv2l4ioum6fcj6n1of.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCz9DqiA18-VaqJSQ3Eorjl8xOTxRU_7oc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1059223010911-3h3836sev34t05rv2l4ioum6fcj6n1of.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

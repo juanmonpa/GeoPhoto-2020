@@ -1,0 +1,38 @@
+.container { 
+    height: 100%;
+    position: relative;
+    border: 2px solid #666;
+    background-color: black 
+  }
+  
+  .vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    height:auto;
+}
+.info1{
+    position: fixed;
+    padding:5px;
+    width:100%;
+    top:0px;
+    z-index:9999;
+    background-color: rgba(0, 0, 0, 0.4);
+    color:white;
+}
+.info{
+    position: fixed;
+    padding:5px;
+    width:100%;
+    bottom:0px;
+    z-index:9999;
+    background-color: rgba(0, 0, 0, 0.4);
+    color:white;
+}

@@ -1,0 +1,7 @@
+{
+    "hello":"Hello World",
+    "close":"Close",
+    "modal":{
+        "open":"Open"
+    }
+}
